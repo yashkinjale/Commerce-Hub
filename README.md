@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 # Commerce Hub
 
 A full-stack web application with authentication and CRUD operations, built as part of a Frontend Developer Intern assignment.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 **Frontend:**
 - React.js
@@ -18,7 +17,7 @@ A full-stack web application with authentication and CRUD operations, built as p
 - JWT (Authentication)
 - bcrypt (Password hashing)
 
-## ✨ Features
+## Features
 
 ### Authentication
 - User registration with name, email, and password
@@ -54,7 +53,7 @@ A full-stack web application with authentication and CRUD operations, built as p
 - Search with clear functionality
 - Real-time form validation
 
-## 📋 Database Schema
+## Database Schema
 
 ### Product Schema
 ```javascript
@@ -77,7 +76,7 @@ A full-stack web application with authentication and CRUD operations, built as p
 }
 ```
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -117,7 +116,7 @@ The application will run on:
 - Frontend: `http://localhost:5173`
 - Backend: `http://localhost:9000`
 
-## 🔐 Security Features
+## Security Features
 
 - **Password Hashing:** All passwords are hashed using bcrypt with 10 salt rounds before storage
 - **JWT Authentication:** Secure token-based authentication system with 2-hour expiration
@@ -127,7 +126,7 @@ The application will run on:
 - **Error Handling:** Comprehensive try-catch blocks with appropriate status codes
 - **Input Validation:** Server-side validation on all endpoints
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /signup` - User registration with hashed password
@@ -151,37 +150,37 @@ All protected endpoints use `verifyToken` middleware:
 Authorization: Bearer <JWT_TOKEN>
 ```
 
-## 🎯 Assignment Requirements Met
+## Assignment Requirements Met
 
-✅ **Frontend Development**
+**Frontend Development**
 - Built with React.js
 - Responsive design with smooth animations
 - Form validation (client + server side)
 - Protected routes implementation
 - Modern UI with Framer Motion
 
-✅ **Backend Development**
+**Backend Development**
 - Node.js/Express backend
 - JWT-based authentication
 - CRUD operations on products entity
 - MongoDB database integration
 - RESTful API design
 
-✅ **Dashboard Features**
+**Dashboard Features**
 - User profile display with statistics
 - CRUD operations on products
 - Search and filter UI with real-time results
 - Logout flow
 - Delete confirmation modals
 
-✅ **Security & Scalability**
+**Security & Scalability**
 - Password hashing with bcrypt (10 salt rounds)
 - JWT authentication middleware
 - Comprehensive error handling and validation
 - Modular code structure with separate route handlers
 - Token expiration management
 
-## 📈 Scalability Considerations
+## Scalability Considerations
 
 ### Current Implementation
 - Modular backend with middleware architecture
@@ -249,7 +248,7 @@ Authorization: Bearer <JWT_TOKEN>
 - CDN for static assets
 - Database sharding for large datasets
 
-## 🤝 Contributing
+## Contributing
 
 This project was built as an assignment for a Frontend Developer Intern position. The codebase demonstrates:
 - Clean, maintainable code structure
@@ -258,7 +257,7 @@ This project was built as an assignment for a Frontend Developer Intern position
 - Modern UI/UX with animations
 - Scalability potential
 
-## 📝 Development Notes
+## Development Notes
 
 ### Key Implementation Details:
 - **Account Creation Date:** Extracted from MongoDB ObjectId timestamp (no separate field needed)
@@ -285,7 +284,7 @@ project/
     └── package.json
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **Backend won't start:**
 - Ensure MongoDB is running
@@ -302,88 +301,16 @@ project/
 - Verify token hasn't expired (2-hour limit)
 - Ensure token is stored in localStorage
 
-## 📧 Contact
+## Contact
 
 For questions or feedback regarding this assignment:
 - GitHub: [http://github.com/yashkinjale]
 - Email: [kinjaleyash@gmail.com]
 
-## 📄 License
+## License
 
 This project is part of an internship assignment submission for Frontend Developer position at Bajarangs/PrimeTrade.
 
 ---
 
-**Built with ❤️ demonstrating full-stack development skills**
-=======
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> b878fd9c03d790e789a82765d3c16dc82d0773ac
+Built with care demonstrating full-stack development skills
