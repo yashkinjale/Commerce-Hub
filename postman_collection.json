@@ -1,0 +1,312 @@
+{
+  "info": {
+    "name": "Commerce Hub API",
+    "description": "Complete API collection for E-commerce Dashboard with Authentication, Product Management, and User Profile endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Signup",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9000/signup",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["signup"]
+            },
+            "description": "Register a new user with name, email, and password. Password is automatically hashed with bcrypt. Returns user data and JWT token."
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9000/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["login"]
+            },
+            "description": "Login with email and password. Verifies password with bcrypt. Returns user data and JWT token (valid for 2 hours)."
+          },
+          "response": []
+        }
+      ],
+      "description": "User authentication endpoints - Signup and Login"
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": [""]
+            },
+            "description": "Get all products from the database. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Add Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"iPhone 15\",\n  \"price\": \"79999\",\n  \"quantity\": 10,\n  \"category\": \"Electronics\",\n  \"company\": \"Apple\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9000/add-product",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["add-product"]
+            },
+            "description": "Add a new product. User ID is automatically extracted from JWT token. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9000/product/:_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["product", ":_id"],
+              "variable": [
+                {
+                  "key": "_id",
+                  "value": "PRODUCT_ID_HERE",
+                  "description": "MongoDB ObjectId of the product"
+                }
+              ]
+            },
+            "description": "Get a single product by its MongoDB ObjectId. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"iPhone 15 Pro\",\n  \"price\": \"99999\",\n  \"quantity\": 15,\n  \"category\": \"Electronics\",\n  \"company\": \"Apple\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9000/product/:_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["product", ":_id"],
+              "variable": [
+                {
+                  "key": "_id",
+                  "value": "PRODUCT_ID_HERE",
+                  "description": "MongoDB ObjectId of the product"
+                }
+              ]
+            },
+            "description": "Update an existing product. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9000/product/:_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["product", ":_id"],
+              "variable": [
+                {
+                  "key": "_id",
+                  "value": "PRODUCT_ID_HERE",
+                  "description": "MongoDB ObjectId of the product"
+                }
+              ]
+            },
+            "description": "Delete a product by its ID. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9000/search/:key",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["search", ":key"],
+              "variable": [
+                {
+                  "key": "key",
+                  "value": "iphone",
+                  "description": "Search term (searches in name, category, company)"
+                }
+              ]
+            },
+            "description": "Search products by name, category, or company using case-insensitive regex. Requires authentication."
+          },
+          "response": []
+        }
+      ],
+      "description": "Product CRUD operations - Create, Read, Update, Delete, and Search products"
+    },
+    {
+      "name": "User Profile",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9000/profile",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["profile"]
+            },
+            "description": "Get user profile with statistics: name, email, account creation date, total products, and recent 3 products. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Username",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt_token}}",
+                "description": "JWT token from login/signup"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Smith\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9000/profile/username",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9000",
+              "path": ["profile", "username"]
+            },
+            "description": "Update the username of the logged-in user. Requires authentication."
+          },
+          "response": []
+        }
+      ],
+      "description": "User profile endpoints - View and update user information"
+    }
+  ],
+  "variable": [
+    {
+      "key": "jwt_token",
+      "value": "YOUR_JWT_TOKEN_HERE",
+      "type": "string"
+    }
+  ]
+}
